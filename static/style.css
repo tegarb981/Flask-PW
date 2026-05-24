@@ -1,70 +1,91 @@
+/* ========================================================
+   NEON CYBERPUNK THEME - FLASK ENCRYPTOR
+   ======================================================== */
+
 html, body {
   height: 100%;
   margin: 0;
-  overflow: hidden;
+  /* overflow: hidden; -> Dihapus agar jika layar HP pendek, form tidak terpotong */
 }
 
 body {
-  font-family: Arial;
+  font-family: 'Segoe UI', Arial, sans-serif;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  /* Jika gambar gunung gagal dimuat, gradasi ini yang menjadi background utama */
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364) !important;
+  color: white;
 }
 
+/* Kotak Wrapper Utama (Efek Kaca Transparan / Glassmorphism) */
 .wrapper {
   width: 340px;
   padding: 40px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px; /* Diubah jadi lebih membulat */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   max-height: 90vh;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
+/* Judul dengan Efek Neon Glow */
 h2 {
   text-align: center;
   color: #fff;
   margin-bottom: 30px;
+  font-size: 28px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 20px #00eaff;
 }
 
+/* Layout Teks di Halaman Response */
 .wrapper p {
   text-align: left;
   color: #fff;
-  margin: 14px 0;
+  margin: 16px 0;
   font-size: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-bottom: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .wrapper p strong {
-  color: rgba(255, 255, 255, 0.85);
+  color: #00eaff; /* Aksen warna cyan untuk label data asli */
 }
 
 .wrapper p span { 
   font-family: monospace;
-  background: rgba(0, 0, 0, 0.25);
-  padding: 2px 8px;
-  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 8px;
+  border-radius: 6px;
   word-break: break-all;
+  color: #fff;
+  border: 1px solid rgba(0, 234, 255, 0.2);
 }
 
+/* Teks Selamat Datang di bagian bawah */
 .wrapper p:last-of-type {
   text-align: center;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 35px;
   padding-top: 15px;
+  border-bottom: none;
   font-size: 13px;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.7);
 }
 
+/* Komponen Form Input */
 .input-field {
   position: relative;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .input-field input {
@@ -72,33 +93,48 @@ h2 {
   padding: 10px 0;
   background: transparent;
   border: none;
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
   color: #fff;
   font-size: 16px;
   outline: none;
+  transition: all 0.3s ease;
 }
 
+/* Label berpindah warna menjadi Cyan saat aktif */
 .input-field label {
   position: absolute;
-  top: -10px;
+  top: -12px;
   left: 0;
   font-size: 12px;
-  color: #fff;
+  color: #00eaff;
+  letter-spacing: 1px;
+  font-weight: 600;
 }
 
+/* Efek ketika input text mulai diketik / focus */
+.input-field input:focus {
+  border-bottom: 2px solid #00eaff;
+  box-shadow: 0 4px 10px -4px rgba(0, 234, 255, 0.5);
+}
+
+/* Tombol Kirim Gradasi Neon Cyberpunk */
 button {
   width: 100%;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.8);
+  padding: 12px;
+  background: linear-gradient(45deg, #00eaff, #007bff);
   border: none;
   cursor: pointer;
-  margin-top: 10px;
-  border-radius: 1px;
-  transition: 0.2s;
-  color: #000;
+  margin-top: 15px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  color: #fff;
   font-weight: bold;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 234, 255, 0.3);
 }
     
 button:hover {
-  background: rgba(255, 255, 255, 1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 234, 255, 0.5);
+  background: linear-gradient(45deg, #007bff, #00eaff);
 }
