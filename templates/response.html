@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <style>
   html, body {
-    background: url("{{ url_for('static', filename='4k_Mountain_Peak.jpg') if image_in_static else '/4k_Mountain_Peak.jpg' }}") no-repeat center center fixed;
+    /* Sama seperti di atas, ditambahkan overlay gelap */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url("{{ url_for('static', filename='4k_Mountain_Peak.jpg') if image_in_static else '/4k_Mountain_Peak.jpg' }}") no-repeat center center fixed;
     background-size: cover;
   }
 </style>
@@ -16,8 +18,8 @@
       
 <div class="wrapper">
 <h2>Flask Encryptor</h2>
-<p><strong>Nama Original:    </strong> {{ nama_asli }}</p>
-<p><strong>Nama Terenkripsi:</strong> {{ nama_encrypt }}</p>
+<p><strong>Nama Original:</strong> <span>{{ nama_asli }}</span></p>
+<p><strong>Nama Terenkripsi:</strong> <span>{{ nama_encrypt }}</span></p>
 <p>Selamat Datang di Pemrograman Python!</p>
 </div>
 
