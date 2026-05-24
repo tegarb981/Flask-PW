@@ -7,7 +7,9 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <style>
   html, body {
-    background: url("{{ url_for('static', filename='4k_Mountain_Peak.jpg') if image_in_static else '/4k_Mountain_Peak.jpg' }}") no-repeat center center fixed;
+    /* Ditambahkan linear-gradient hitam transparan sebelum url gambar agar gambar gunung terlihat lebih gelap/kontras */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url("{{ url_for('static', filename='4k_Mountain_Peak.jpg') if image_in_static else '/4k_Mountain_Peak.jpg' }}") no-repeat center center fixed;
     background-size: cover;
   }
 </style>
